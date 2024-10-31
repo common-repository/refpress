@@ -1,0 +1,651 @@
+@charset "UTF-8";
+/****************************************************************************
+ * RefPress v1.0.0
+ * Copyright 2021 | RefPress | https://www.themeqx.com
+ ****************************************************************************/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.refpress-spinner:before {
+  font-family: "dashicons" !important;
+  speak: none;
+  font-style: normal;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "";
+  -webkit-animation: rotation 2s infinite linear;
+          animation: rotation 2s infinite linear;
+  display: inline-block;
+  margin-left: 5px;
+}
+
+.margin-y-5 {
+  margin-top: 3em;
+  margin-bottom: 3em;
+}
+
+.margin-y-10 {
+  margin-top: 7em;
+  margin-bottom: 7em;
+}
+
+.refpress-pill {
+  background-color: #eef0f3;
+  border-radius: 100px;
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.25px;
+  color: rgba(77, 92, 109, 0.8);
+  padding: 6px 12px;
+  line-height: 1;
+  margin: 0 0 0 6px;
+  white-space: nowrap;
+}
+.refpress-pill.refpress-pill-success, .refpress-pill.text-approved, .refpress-pill.text-success, .refpress-pill.completed {
+  background-color: #28a745;
+  color: #ffffff;
+}
+.refpress-pill.refpress-pill-danger, .refpress-pill.text-blocked, .refpress-pill.text-rejected, .refpress-pill.rejected {
+  background-color: #d94c61;
+  color: #ffffff;
+}
+.refpress-pill.refpress-pill-warning, .refpress-pill.refpress-pill-onhold {
+  background-color: #ffc107;
+  color: #ffffff;
+}
+
+/****************************************************************************
+ * Admin CSS
+ ****************************************************************************/
+.wp-core-ui.toplevel_page_refpress {
+  background-color: #ffffff;
+}
+.wp-core-ui .button-success {
+  background: #0da402;
+  border-color: #0da402;
+  color: #fff;
+  text-decoration: none;
+  text-shadow: none;
+}
+.wp-core-ui .button-warning {
+  background: #c45107;
+  border-color: #c45107;
+  color: #fff;
+  text-decoration: none;
+  text-shadow: none;
+}
+
+.wp-admin #refpress-admin-wrap {
+  margin-top: 20px;
+}
+.wp-admin .refpress-form-error-wrap {
+  background-color: #ffffff;
+  border-right: 2px solid #e93737;
+  padding: 0.7em 1em;
+}
+.wp-admin .refpress-admin-section-header {
+  color: #536070;
+  font-size: 1.3em;
+}
+.wp-admin .postbox-container {
+  padding: 10px;
+}
+.wp-admin .postbox-container .box-inside {
+  /*
+              padding: 15px;
+              border: 1px solid #ccd0d4;
+  */
+  position: relative;
+  min-width: 255px;
+}
+.wp-admin .postbox-container .box-inside table th {
+  background-color: #EEEEEE;
+}
+.wp-admin .postbox-container .box-inside table tr:not(:last-child) th, .wp-admin .postbox-container .box-inside table tr:not(:last-child) td {
+  border-bottom: 1px solid #ccd0d4;
+}
+.wp-admin .text-light {
+  color: #677483;
+}
+.wp-admin table.account-view td, .wp-admin table.account-view th {
+  padding-right: 20px;
+}
+.wp-admin table.account-view tr:not(:last-child) th, .wp-admin table.account-view tr:not(:last-child) td {
+  border-bottom: 1px solid #ccd0d4;
+}
+.wp-admin table.account-view ul {
+  margin-top: 0;
+}
+
+#adminmenu .pending-account-count {
+  display: inline-block;
+  vertical-align: top;
+  box-sizing: border-box;
+  margin: 1px 2px -1px 0;
+  padding: 0 5px;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  background-color: #ca4a1f;
+  color: #fff;
+  font-size: 11px;
+  line-height: 1.6;
+  text-align: center;
+  z-index: 26;
+}
+#adminmenu .pending-account-count.count-0 {
+  display: none;
+}
+
+#refpress-pay-to-referer-wrap .referer-payout-method-name {
+  margin-bottom: 15px;
+}
+#refpress-pay-to-referer-wrap .referer-payout-field {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+#refpress-pay-to-referer-wrap .referer-payout-field span.field-title {
+  width: 200px;
+}
+#refpress-pay-to-referer-wrap .referer-payout-field span.field-value {
+  color: #677186;
+  margin-right: 5px;
+}
+
+.wp-list-table.payouts .payout-method-name {
+  margin-bottom: 15px;
+}
+.wp-list-table.payouts .payout-field span.field-value {
+  color: #677186;
+  margin-right: 5px;
+}
+.wp-list-table.accounts td.column-pay {
+  color: #CCCCCC;
+}
+
+.row-actions span.approved a, .row-actions span.approve a, .row-actions span.success a {
+  color: #09ab03;
+}
+.row-actions span.blocked a, .row-actions span.rejected a {
+  color: #a00;
+}
+
+#refpress-account-search-results {
+  margin: 1em 0;
+}
+#refpress-account-search-results .searching-text {
+  background-color: #ffffff;
+  border-right: 2px solid #01A4B9;
+  padding: 0.7em 1em;
+}
+#refpress-account-search-results .user-result {
+  background-color: #ffffff;
+  border-right: 2px solid #30ae00;
+  padding: 0.5em 1em;
+}
+#refpress-account-search-results .result-error {
+  background-color: #ffffff;
+  border-right: 2px solid #e93737;
+  padding: 0.7em 1em;
+}
+
+/** Options Panel **/
+.refpress-settings-wrap .button.refpress-button-outline {
+  color: #8f235f;
+  border-color: #8f235f;
+}
+
+.refpress-settings-header {
+  padding: 15px 20px;
+  background-color: #9B2B69;
+}
+.refpress-settings-header h1, .refpress-settings-header h2 {
+  color: #ffffff;
+}
+.refpress-settings-header small.version {
+  color: #b6bbc0;
+}
+
+.refpress-settings-fields-wrap {
+  background-color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 1px solid #dedede;
+}
+.refpress-settings-fields-wrap .select2-container, .refpress-settings-fields-wrap .select2-container .select2-selection--single {
+  min-width: 200px;
+}
+.refpress-settings-fields-wrap .settings-changes-warning {
+  margin: 0;
+  color: #be542d;
+}
+
+.refpress-settings-sidebar {
+  background-color: #f7f8fc;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 180px;
+          flex: 0 0 180px;
+}
+.refpress-settings-sidebar a {
+  display: block;
+  padding: 12px 15px;
+  color: #3f4753;
+  text-decoration: none;
+}
+.refpress-settings-sidebar a:hover, .refpress-settings-sidebar a.current {
+  background-color: #ffffff;
+}
+.refpress-settings-sidebar a:hover i, .refpress-settings-sidebar a.current i {
+  color: #4f8ade;
+}
+.refpress-settings-sidebar a i {
+  font-size: 16px;
+  color: #8894ab;
+  margin-left: 6px;
+}
+
+.refpress-nav_tab-wrap {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  min-height: 500px;
+  position: relative;
+}
+
+.refpress-settings-panel-top-bar, .refpress-settings-panel-bottom-bar {
+  background: #f1f1f1;
+  border-bottom: 1px solid #dedede;
+  padding: 10px;
+  box-shadow: inset 0 1px 0 #fcfcfc;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.refpress-settings-panel-bottom-bar {
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.refpress-settings-panel-nav_tab {
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.refpress-settings-field-wrap {
+  padding: 20px 0;
+  border-bottom: 1px solid #E7E7E7;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.refpress-settings-field-wrap .refpress-settings-field-title {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 170px;
+          flex: 0 0 170px;
+  margin-left: 20px;
+}
+.refpress-settings-field-wrap .refpress-settings-field-title .field-title {
+  margin-top: 0;
+}
+.refpress-settings-field-wrap .option-media-preview img {
+  max-height: 100px;
+  width: auto;
+  background-color: #ffffff;
+  border: 1px solid #DDDDDD;
+  padding: 5px;
+}
+
+.refpress-settings-group-fields-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.refpress-settings-group-fields-wrap .refpress-settings-group-field {
+  margin-left: 15px;
+}
+
+/** Option Fields **/
+.refpress-settings-group-field .regular-text {
+  max-width: 8em;
+}
+
+/** Payouts Settings **/
+#refpress-admin-payout-methods-settings-wrap {
+  margin: 1em 0;
+}
+#refpress-admin-payout-methods-settings-wrap .refpress-admin-payout-nav-method-item {
+  font-weight: bold;
+  padding: 5px 7px;
+  text-decoration: none;
+  position: relative;
+}
+#refpress-admin-payout-methods-settings-wrap .refpress-admin-payout-nav-method-item:after {
+  content: "";
+  border: 1px solid #DDDDDD;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+#refpress-admin-payout-methods-settings-wrap .refpress-admin-payout-nav-method-item:last-child:after {
+  content: "";
+  border: none;
+}
+#refpress-admin-payout-methods-settings-wrap #refpress-settings-payout-method-form {
+  margin: 1.5em 0;
+}
+
+.refpress-account-list-info-wrap {
+  margin-top: 20px;
+  display: block;
+}
+.refpress-account-list-info-wrap p span {
+  color: #677186;
+}
+
+/** WC Supprot **/
+#woocommerce-product-data ul.wc-tabs li.refpress_tab_options a::before {
+  content: "";
+}
+
+.refpress-get-pro-text-wrap {
+  background-color: #ffffff;
+  border: 1px solid #ccd0d4;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+  padding: 1em 1.5em;
+  margin-top: 1.5em;
+  margin-bottom: 2em;
+}
+.refpress-get-pro-text-wrap h4 {
+  font-size: 1.1em;
+}
+.refpress-get-pro-text-wrap .info-text {
+  padding-bottom: 1.5em;
+  color: #45617e;
+  border-bottom: 1px solid #ccd0d4;
+}
+
+.refpress-request-for-account-wrap {
+  max-width: 992px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.refpress-request-for-account-wrap .refpress-request-account-image {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 300px;
+          flex: 0 0 300px;
+  margin-left: 30px;
+}
+.refpress-request-for-account-wrap .refpress-request-account-image img {
+  width: 100%;
+}
+.refpress-request-for-account-wrap .refpress-request-account-cta {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.refpress-request-for-account-wrap legend {
+  font-size: 1.3em;
+}
+
+.account-not-approved-wrap {
+  max-width: 767px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-align: center;
+}
+
+.refpress-account-wrap {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-bottom: 10px;
+}
+.refpress-account-wrap .refpress-account-menu-wrap {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 250px;
+          flex: 0 0 250px;
+  padding: 20px;
+  border-left: 1px solid #EEEEEE;
+}
+.refpress-account-wrap .refpress-account-menu-wrap ul li.active {
+  font-weight: bold;
+}
+.refpress-account-wrap .refpress-account-content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 30px;
+}
+
+.refpress-account-not-approved-greetings {
+  margin-top: 3em;
+  text-align: center;
+}
+
+#repressGeneratedLink {
+  width: 100%;
+}
+
+/** Form Error **/
+.refpress-form-error-wrap {
+  margin-bottom: 20px;
+  font-size: 90%;
+}
+.refpress-form-error-wrap .refpress-form-error li {
+  color: #c45107;
+}
+
+/** Account Register and Login Page **/
+.refpress-account-login-register-wrap {
+  max-width: 991px;
+  width: 100%;
+  margin: 3em auto 3em auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.refpress-account-login-register-wrap input[type=color], .refpress-account-login-register-wrap input[type=date], .refpress-account-login-register-wrap input[type=datetime-local], .refpress-account-login-register-wrap input[type=datetime], .refpress-account-login-register-wrap input[type=email], .refpress-account-login-register-wrap input[type=month], .refpress-account-login-register-wrap input[type=number], .refpress-account-login-register-wrap input[type=password], .refpress-account-login-register-wrap input[type=search], .refpress-account-login-register-wrap input[type=tel], .refpress-account-login-register-wrap input[type=text], .refpress-account-login-register-wrap input[type=time], .refpress-account-login-register-wrap input[type=url], .refpress-account-login-register-wrap input[type=week], .refpress-account-login-register-wrap textarea {
+  width: 100%;
+}
+.refpress-account-login-register-wrap .refpress-account-login-wrap {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 46%;
+          flex: 0 0 46%;
+}
+.refpress-account-login-register-wrap .refpress-account-register-wrap {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 46%;
+          flex: 0 0 46%;
+}
+
+.refpress-link-generator-form-wrap {
+  margin-bottom: 20px;
+  border: 1px solid #DDDDDD;
+  padding: 20px;
+  max-width: 400px;
+}
+.refpress-link-generator-form-wrap input[type=text] {
+  min-width: 100%;
+}
+.refpress-link-generator-form-wrap .refpress-link-generator-field-wrap {
+  margin-bottom: 15px;
+}
+
+.repress-form-help {
+  font-size: 0.9em;
+  color: #4e5c6b;
+}
+
+/**
+* Stats- Cards
+ */
+.refpress-cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+  margin-right: -10px;
+  margin-left: -10px;
+}
+.refpress-cards .refpress-card-item {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+@media (min-width: 1rem) {
+  .refpress-cards .refpress-card-item {
+    width: 100%;
+  }
+}
+@media (min-width: 40rem) {
+  .refpress-cards .refpress-card-item {
+    width: 50%;
+  }
+}
+@media (min-width: 56rem) {
+  .refpress-cards .refpress-card-item {
+    width: 33.3333%;
+  }
+}
+.refpress-cards .refpress-single-card {
+  background-color: white;
+  border-radius: 0.25rem;
+  border: 1px solid #EEEEEE;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+.refpress-cards .refpress-single-card .card-title {
+  color: #4c4c4c;
+  font-size: 0.9rem;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+.refpress-cards .refpress-single-card .card-value {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  color: #4d5564;
+  font-size: 1.3rem;
+  line-height: 1.3;
+  margin-bottom: 5px;
+}
+
+/**
+* Affiliate Dashboard Payout
+*/
+.refpress-payout-settings-wrap fieldset, .refpress-account-login-register-wrap fieldset {
+  border-top: 1px solid #e0e0e0;
+  color: #333;
+  border-bottom: none;
+  border-right: none;
+  border-left: none;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+.refpress-payout-settings-wrap fieldset legend, .refpress-account-login-register-wrap fieldset legend {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: #555;
+}
+.refpress-payout-settings-wrap .payout-form-field-wrap, .refpress-account-login-register-wrap .payout-form-field-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  vertical-align: top;
+  padding-top: 3px;
+  margin-bottom: 10px;
+}
+.refpress-payout-settings-wrap .payout-form-field-wrap label, .refpress-account-login-register-wrap .payout-form-field-wrap label {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 30%;
+          flex: 0 0 30%;
+}
+.refpress-payout-settings-wrap .payout-form-field-wrap .payout-form-field, .refpress-account-login-register-wrap .payout-form-field-wrap .payout-form-field {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+          flex: 0 0 50%;
+}
+@media screen and (max-width: 767px) {
+  .refpress-payout-settings-wrap .payout-form-field-wrap, .refpress-account-login-register-wrap .payout-form-field-wrap {
+    display: block;
+  }
+  .refpress-payout-settings-wrap .payout-form-field-wrap label, .refpress-account-login-register-wrap .payout-form-field-wrap label {
+    width: 100%;
+  }
+  .refpress-payout-settings-wrap .payout-form-field-wrap .payout-form-field, .refpress-account-login-register-wrap .payout-form-field-wrap .payout-form-field {
+    width: 100%;
+  }
+}
+.refpress-payout-settings-wrap .payout-method-instruction, .refpress-account-login-register-wrap .payout-method-instruction {
+  background-color: #ffffff;
+  padding: 0.8em 1em;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  -webkit-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+          transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  margin: 1em 0;
+  color: #40485b;
+}
+.refpress-payout-settings-wrap .payout-method-instruction p, .refpress-account-login-register-wrap .payout-method-instruction p {
+  font-size: 0.8em;
+  margin: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .refpress-request-for-account-wrap {
+    max-width: 767px;
+    display: block;
+  }
+  .refpress-request-for-account-wrap .refpress-request-account-image img {
+    max-width: 400px;
+    width: 100%;
+  }
+}
+.refpress-container {
+  max-width: 1170px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+@media (max-width: 574px) {
+  /**
+  * Mobile, iPhone
+  */
+}
